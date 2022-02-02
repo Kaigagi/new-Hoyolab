@@ -1,14 +1,25 @@
+/* variable */
+:root{
+    /* color */
+    --background-color: #f5f6fb;
+    --hover-outline-color: #657ef8;
+    --hover-background-color: #eff2ff;
+    --side-bar-font-color: #98a4bb;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+
 *{
     margin: 0px;
 }
 body{
-    background-color: #f5f6fb;
+    background-color: var(--background-color);
 }
 img{
     height: 100%;
     width: auto;
 }
 
+/* ---------------------------------------------------------------------------------------------------- */
 /* header */
 .header-wrap{
     background-color: #ffffff;
@@ -19,7 +30,7 @@ img{
     justify-content: center;
 }
 .header-inner{
-    width: 992px;
+    width: 1200px;
     display: flex;
     align-items: center;
 }
@@ -32,28 +43,153 @@ img{
     height: 36px;
 }
 
+/* ---------------------------------------------------------------------------------------------------- */
+/* header -main */
 .header-main{
-    width: auto;
+    width: 608px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 92px;
 }
-.header-main input{
+.search-box{
     width: 364px;
     height: 32px;
-    border: 1px #657ef8 solid;
+    background-color: #f1f4f9;
     border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    position: relative;
 }
-.header-main input::before{
-    content: "fdf";
+.search-box-focus{
+    border: 1px var(--hover-outline-color) solid;
+}
+.search-box img{
     height: 20px;
-    width: 20px;
-    background-image: url(./Assets/kinhlup.PNG);
+    margin-left: 10px;
+}
+.search-box form{
+    width: 100%;
+}
+.search-box input{
+    width: 80%;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.search-box input::placeholder{
+    color: var(--side-bar-font-color);
+    font-size: 1em;
+}
+.search-box input:focus{
+    outline: none;
+}
+.hint-box{
+    width: 364px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    top: 45px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+/* ---------------------------------------------------------------------------------------------------- */
+/* header - right */
 .header-right{
-    width: 228px;
+    width: 344px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.post-icon{
+    height: 20px;
+    padding: 8px;
+    margin-right: 5px;
+}
+.post-icon:hover{
+    background-color: var(--hover-background-color);
+    border-radius: 20px;
+}
+.post-icon img:hover{
+    filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(4067%) hue-rotate(214deg) brightness(104%) contrast(94%);
+}
+.noti-icon{
+    height: 20px;
+    padding: 8px;
+}
+.noti-icon:hover{
+    background-color: var(--hover-background-color);
+    border-radius: 20px;
+}
+.noti-icon img:hover{
+    filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(4067%) hue-rotate(214deg) brightness(104%) contrast(94%);
+}
+.user-avatar{
+    height: 30px;
+    padding: 8px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* side menu */
+.side-menu-area{
+    width: 392px;
+    height: 2000px;
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+}
+.side-menu{
+    width: 220px;
+    height: 802px;
+    background-color: white;
+    margin-top: 70px;
+    overflow: scroll;
+    border-radius: 5px;
+    padding: 5px;
+}
+.side-menu::-webkit-scrollbar{
+    width: 10px;
+}
+.side-menu::-webkit-scrollbar-track{
+    background-color: var(--background-color);
+}
+.side-menu::-webkit-scrollbar-thumb{
+    background-color: #dde3ec;
+    border-radius: 5px;
+}
+
+/* side menu - home */
+.side-menu-button{
+    background-color: white;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--side-bar-font-color);
+}
+.side-menu-button:hover{
+    background-color: var(--hover-background-color);
+}
+.side-menu-button:hover img{
+    filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(4067%) hue-rotate(214deg) brightness(104%) contrast(94%);;
+}
+.side-menu-button img{
+    height: 50%;
+    margin-right: 10px;
+}
+
+/* for device smaller than 1360px*/
+@media only screen and (max-width: 1359){
+    .header-inner{
+        width: 992px;
+    }
+    .header-right{
+        width: 288px;
+    }
 }
 
 /* for device smaller than 1024px*/
